@@ -24,11 +24,11 @@ namespace Q1
             this.FormBorderStyle = FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-
-			game = new GuessNumber();
-			game.NewGame();
-			lblAnswer.Text = game.Answer;
-		}
+	    
+	    game = new GuessNumber();
+	    game.NewGame();
+	    lblAnswer.Text = game.Answer;
+	}
 
         private void btnNewGame_Click(object sender, EventArgs e)
         {
@@ -42,20 +42,20 @@ namespace Q1
         {
             try
             {
-				string show = game.Guess(txtInput.Text);
-				txtShow.Text = show;
-				txtInput.Text = String.Empty;
-				if (show.EndsWith("4A0B\r\n")) MessageBox.Show("Good!", "Correct",
-																MessageBoxButtons.OK,
-																MessageBoxIcon.Information);
+	    	string show = game.Guess(txtInput.Text);
+		txtShow.Text = show;
+		txtInput.Text = String.Empty;
+		if (show.EndsWith("4A0B\r\n")) MessageBox.Show("Good!", "Correct",
+								MessageBoxButtons.OK,
+								MessageBoxIcon.Information);
 			}
             catch (Exception ex)
             {
-				txtInput.Text = String.Empty;
-				MessageBox.Show(ex.Message, "Error", 
-                                MessageBoxButtons.OK, 
+		txtInput.Text = String.Empty;
+		MessageBox.Show(ex.Message, "Error", 
+                		MessageBoxButtons.OK, 
                                 MessageBoxIcon.Error);
             }
-		}
+	}
     }
 }
